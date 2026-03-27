@@ -1,3 +1,4 @@
+from typing import Any
 
 
 def calculate_sum(n: float) -> float:
@@ -93,4 +94,26 @@ def is_number(string: str) -> bool:
     except ValueError:
 
         return False
+
+
+def unique(lst: list[Any]) -> list[Any]:
+
+    if not isinstance(lst, list):
+
+        raise TypeError("lst must be list")
+
+    if not lst:
+
+        return []
+
+
+    unique_list = []
+
+    for item in lst:
+
+        if item not in unique_list:
+
+            unique_list.append(item)
+
+    return unique_list
 

@@ -34,3 +34,18 @@ def calculate_sum(n: float) -> float:
 
     return summa
 
+
+def count_words(line: str) -> int:
+
+    if not isinstance(line, str):
+
+        raise TypeError("line must be str")
+
+    if not line:
+
+        return 0
+
+
+    length = len(line.split())
+
+    return length

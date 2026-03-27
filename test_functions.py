@@ -2,6 +2,7 @@ import pytest
 from functions import calculate_sum
 from functions import count_words
 from functions import is_number
+from functions import unique
 
 
 def test_calculate_sum_str():
@@ -87,3 +88,31 @@ def test_is_number_with_spaces():
 def test_is_number_empty_string():
     assert is_number(" ") == False
 
+
+def test_unique_unique_numbers():
+    assert unique([2, 2, 2, 2]) == [2]
+
+def test_unique_all_unique_numbers():
+    assert unique([1, 2, 3, 4]) == [1, 2, 3, 4]
+
+def test_unique_single_element():
+    assert unique([4]) == [4]
+    assert unique(["q"]) == ["q"]
+    assert unique([None]) == [None]
+
+def test_unique_empty_list():
+    assert unique([]) == []
+
+def test_unique_strings():
+    assert unique(["a", "a", "b", "b", "c", "c"]) == ["a", "b", "c"]
+
+def test_unique_mixed_types():
+    assert unique([1, "1", "1", 2, False, "2"]) == [1, "1", 2, False, "2"]
+
+def test_unique_integer():
+    with pytest.raises(TypeError):
+        unique(247)
+
+def test_unique_none():
+    with pytest.raises(TypeError):
+        unique(None)

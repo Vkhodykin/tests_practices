@@ -97,6 +97,17 @@ def is_number(string: str) -> bool:
 
 
 def unique(lst: list[Any]) -> list[Any]:
+    """
+    Возможные тесты для функции unique:
+    1) Есть уникальные элементы;
+    2) Все элементы уникальные;
+    3) Один элемент в списке;
+    4) Пустой список;
+    5) Список из строк
+    6) Смешанный тип элементов;
+    7) Число вместо списка;
+    8) Нет элементов.
+    """
 
     if not isinstance(lst, list):
 
@@ -116,4 +127,3 @@ def unique(lst: list[Any]) -> list[Any]:
             unique_list.append(item)
 
     return unique_list
-

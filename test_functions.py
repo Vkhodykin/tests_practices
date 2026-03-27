@@ -1,6 +1,7 @@
 import pytest
 from functions import calculate_sum
 from functions import count_words
+from functions import is_number
 
 
 def test_calculate_sum_str():
@@ -60,3 +61,29 @@ def test_count_words_single_letters():
 
 def test_count_words_hyphenated_words():
     assert count_words("python-cool") == 1
+
+
+def test_is_number_positive_integer():
+    assert is_number("7532") == True
+
+def test_is_number_negative_integer():
+    assert is_number("-385") == True
+
+def test_is_number_zero():
+    assert is_number("0") == True
+
+def test_is_number_fractional_number():
+    assert is_number("456.54") == False
+
+def test_is_number_leading_zeros():
+    assert is_number("00054") == True
+
+def test_is_number_mixed_letters_and_numbers():
+    assert is_number("45sdf") == False
+
+def test_is_number_with_spaces():
+    assert is_number(" 346 ") == True
+
+def test_is_number_empty_string():
+    assert is_number(" ") == False
+

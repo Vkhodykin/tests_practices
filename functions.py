@@ -36,6 +36,17 @@ def calculate_sum(n: float) -> float:
 
 
 def count_words(line: str) -> int:
+    """
+    Возможные тесты для функции count_words:
+    1) Обычная строка из нескольких слов;
+    2) Пустая строка;
+    3) Строка из пробелов;
+    4) Пробелы в начале строки и в конце;
+    5) Много пробелов между словами;
+    6) Одно слово;
+    7) Одиночные буквы;
+    8) Слова через дефис.
+    """
 
     if not isinstance(line, str):
 
@@ -49,3 +60,4 @@ def count_words(line: str) -> int:
     length = len(line.split())
 
     return length
+

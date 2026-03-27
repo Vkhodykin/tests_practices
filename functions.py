@@ -61,3 +61,25 @@ def count_words(line: str) -> int:
 
     return length
 
+
+def is_number(string: str) -> bool:
+
+    if not isinstance(string, str):
+
+        raise TypeError("string must be str")
+
+    if not string:
+
+        return False
+
+
+    try:
+
+        int(string)
+
+        return True
+
+    except ValueError:
+
+        return False
+

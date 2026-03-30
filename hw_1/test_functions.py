@@ -1,8 +1,8 @@
 import pytest
-from functions import calculate_sum
-from functions import count_words
-from functions import is_number
-from functions import unique
+from hw_1.functions import calculate_sum
+from hw_1.functions import count_words
+from hw_1.functions import is_number
+from hw_1.functions import unique
 
 
 def test_calculate_sum_str():

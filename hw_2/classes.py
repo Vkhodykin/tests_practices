@@ -67,3 +67,49 @@ class Temperature:
 
             return 0
 
+
+class LibraryBook:
+
+    def __init__(self, title: str, author: str, publish_year: int) -> None:
+
+        self.__title = title
+        self.__author = author
+        self.__publish_year = publish_year
+
+
+    def get_title(self) -> str:
+
+        return self.__title
+
+    def get_author(self) -> str:
+
+        return self.__author
+
+    def get_publish_year(self) -> int:
+
+        return self.__publish_year
+
+
+    def rename(self, new_title: str) -> None:
+
+        self.__title = new_title
+
+
+    def info(self) -> str:
+
+        return f'Книга "{self.__title}" написана {self.__author} в {self.__publish_year} году'
+
+
+    def is_old(self, current_year: int) -> bool:
+
+        if not current_year - self.__publish_year < 50:
+
+            return True
+
+        return False
+
+
+    def age(self, current_year: int) -> int:
+
+        return current_year - self.__publish_year
+
